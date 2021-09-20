@@ -8,9 +8,9 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class IOCApp1 {
 	public static void main( String[] args )
     {
-		ApplicationContext context = new FileSystemXmlApplicationContext("bean.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("classpath:bean.xml");
 		Battle bg = (Battle)context.getBean("bg");
-		System.out.println(bg);
+		bg.fight();
     }
 
 }

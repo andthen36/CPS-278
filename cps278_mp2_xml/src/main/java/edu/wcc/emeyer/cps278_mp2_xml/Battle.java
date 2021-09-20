@@ -1,25 +1,17 @@
 package edu.wcc.emeyer.cps278_mp2_xml;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("bg")
 public class Battle {
 	
-	BattleGround battleGround;
-	
+	@Autowired
+	private BattleGround battleGround;
+	@Autowired
 	private Character character1;
+	@Autowired
 	private Character character2;
-	
-	
-	
-	public void fight() {
-		System.out.println(battleGround.getBattleGroundDesc() + character1.getName() 
-		+ "and " + character2.getName()
-				+ " are fighting! ");
-		character1.useFightingPower();
-		character2.useFightingPower();
-		
-	}
 
 
 
@@ -55,6 +47,15 @@ public class Battle {
 
 	public void setCharacter2(Character character2) {
 		this.character2 = character2;
+	}
+	
+	public void fight() {
+		System.out.println(battleGround.getBattleGroundDesc() + character1.getName() 
+		+ "and " + character2.getName()
+				+ " are fighting! ");
+		character1.useFightingPower();
+		character2.useFightingPower();
+		
 	}
 	
 }
